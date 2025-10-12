@@ -1,0 +1,80 @@
+.LoginPage {
+  display: flex;
+  justify-content: flex-end; 
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 50px;
+  background-color: #f0f2f5;
+  font-family: Arial, sans-serif;
+}
+
+.LoginPage .login-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.LoginPage .login-form-box {
+  position: relative;
+  width: 400px;
+  background-color: white;
+  border: 1px solid #d3d3d3;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.LoginPage .signup-link {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.LoginPage .signup-link a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #3b82f6;
+  border: 1px solid #3b82f6;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.LoginPage .signup-link a:hover {
+  background-color: #e3edfd;
+}
+
+.LoginPage form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-top: 20px;
+}
+
+.LoginPage input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.LoginPage button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  color: white;
+  background-color: #3b82f6;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.LoginPage button:hover {
+  background-color: #2563eb;
+}

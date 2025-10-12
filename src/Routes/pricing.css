@@ -1,0 +1,46 @@
+.pricing-wrapper {
+  padding: 32px 16px;
+  max-width: 960px; /* constrain the page width so it doesn't fill the whole viewport */
+  margin: 40px auto; /* center horizontally and give vertical breathing room */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center the heading and plans as a whole */
+  box-sizing: border-box;
+}
+
+.plans-container {
+  display: flex;
+  gap: 24px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center; /* center the plan cards within the wrapper */
+}
+
+.plan {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  width: 320px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(20,20,30,0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.plan h2 { margin-top: 0; text-align: center; }
+.plan .price { font-size: 16px; font-weight: 700; text-align: center; }
+.subscribe-button {
+  background: #0066ff;
+  color: #fff;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  align-self: center; /* center the button inside the plan */
+}
+
+@media (max-width: 720px) {
+  .plans-container { flex-direction: column; align-items: center; }
+  .plan { width: 100%; max-width: 420px; }
+}

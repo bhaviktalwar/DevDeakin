@@ -1,0 +1,258 @@
+/* Post editor stylesheet - cleaned and validated */
+
+.editor-layout {
+  display: flex;
+  gap: 24px; /* smaller gap so preview doesn't get pushed off-screen */
+  /* New clean Post Editor stylesheet
+     - Centers the editor card
+     - Uses Times New Roman for post text
+     - Keeps CodeMirror compact and scrollable
+     - Responsive and accessible spacing
+  */
+}
+
+/* Page-level wrapper */
+.create-post-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* stretch children to take full width */
+  justify-content: flex-start; /* align to top */
+  background: #f7fbff;
+  padding: 28px 24px;
+}
+
+.create-post-wrapper > h1 {
+  width: 100%;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 30px;
+  margin: 0 0 22px 0;
+  color: #071133;
+}
+
+/* Card that contains editor & preview */
+.editor-card {
+  width: 100%;
+  max-width: 1200px; /* limit total card width to avoid overflow */
+  display: flex;
+  gap: 24px;
+  padding: 28px;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #eef6ff;
+  box-shadow: 0 12px 30px rgba(12,20,40,0.06);
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+/* Left column (editor) */
+.editor-column {
+  flex: 1 1 0; /* allow the editor column to shrink when needed */
+  min-width: 0; /* critical to allow children to shrink and avoid overflow */
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Right column (preview) */
+.preview-column {
+  width: 320px;
+  flex: 0 0 320px;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f1f6ff;
+  padding-bottom: 8px;
+}
+
+.editor-header h2 {
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  color: #071133;
+}
+
+.editor-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.select-language {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #e6eefc;
+  background: #fff;
+}
+
+.post-button {
+  background: linear-gradient(90deg,#0b5fff,#0066ff);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 6px 16px rgba(11,95,255,0.14);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.post-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(11,95,255,0.18);
+}
+
+.markdown-input {
+  width: 100%;
+  min-height: 280px;
+  border-radius: 8px;
+  border: 1px solid #eef6ff;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  color: #0b1220;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.code-block {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #eef6ff;
+}
+
+/* Soften the dark CodeMirror theme and make it less heavy visually */
+.code-block .CodeMirror {
+  background: #0f1720; /* keep dark but slightly softened */
+}
+
+.code-block .CodeMirror .CodeMirror-scroll {
+  max-height: 180px;
+}
+
+.markdown-block {
+  margin-top: 6px;
+}
+
+.post-error {
+  color: #b91c1c; /* crimson */
+  margin-top: 8px;
+}
+
+.code-preview {
+  background: #0b1220;
+  color: #d6deeb;
+  padding: 12px;
+  border-radius: 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Courier New', monospace;
+}
+
+/* Ensure code in the preview wraps instead of overflowing the container */
+.code-preview,
+.code-preview pre,
+.code-preview code {
+  box-sizing: border-box;
+  text-align: left; /* left-align code for readability */
+  white-space: pre-wrap; /* allow long lines to wrap while preserving newlines */
+  word-break: break-word; /* break long words so they don't escape the box */
+  overflow-wrap: anywhere;
+}
+
+/* Also make markdown-rendered code blocks wrap within the preview panel */
+.markdown-preview pre,
+.markdown-preview code {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  margin: 0;
+}
+
+.CodeMirror {
+  height: auto;
+  min-height: 180px;
+  border-radius: 6px;
+  border: 1px solid #eef6ff;
+}
+
+/* limit visible code editor height so it doesn't create a huge dark band */
+.CodeMirror .CodeMirror-scroll {
+  max-height: 220px;
+  overflow: auto;
+}
+
+.preview-column .markdown-preview {
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  color: #0b1220;
+  border: 1px solid #eef6ff;
+}
+
+.preview-column h3,
+.editor-column h3 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  color: #0b1220;
+}
+
+/* spacing for preview content */
+.preview-column .markdown-preview p,
+.preview-column .markdown-preview ul,
+.preview-column .markdown-preview ol,
+.preview-column .markdown-preview pre,
+.preview-column .markdown-preview table {
+  margin-bottom: 1.1em;
+}
+
+/* responsive */
+@media (max-width: 1000px) {
+  .editor-card {
+    flex-direction: column;
+    padding: 16px;
+  }
+  .preview-column {
+    width: 100%;
+    flex: 0 0 auto;
+  }
+}
+
+/* medium screens: reduce preview width and gaps so both columns fit comfortably */
+@media (max-width: 1280px) {
+  .editor-card {
+    gap: 18px;
+    padding: 22px;
+  }
+  .preview-column {
+    width: 300px;
+    flex: 0 0 300px;
+  }
+}
+
+.post-error {
+  border-left: 3px solid #fca5a5;
+  background: #fff7f7;
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+
+.markdown-preview th,
+.markdown-preview td {
+  border: 1px solid #e6eefc;
+  padding: 10px 12px;
+}
+
+.markdown-preview img {
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+
