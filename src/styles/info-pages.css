@@ -1,0 +1,382 @@
+/* Shared styles for informational pages (FAQs, Help, Contact, Privacy, Terms, Code of Conduct) */
+
+.info-page-container {
+  min-height: 100vh;
+  background: #f9fafb;
+  padding: 40px 20px;
+}
+
+.info-page-content {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+}
+
+.info-page-content h1 {
+  margin: 0 0 8px 0;
+  color: #1a202c;
+  font-size: 36px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.subtitle {
+  color: #6b7280;
+  margin-bottom: 32px;
+  font-size: 16px;
+}
+
+/* FAQs specific styles */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.faq-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a202c;
+  transition: background 0.2s;
+}
+
+.faq-question:hover {
+  background: #f9fafb;
+}
+
+.faq-question.active {
+  background: #f3f4f6;
+}
+
+.faq-icon {
+  font-size: 24px;
+  font-weight: 400;
+  color: #2c7a7b;
+  flex-shrink: 0;
+}
+
+.faq-answer {
+  padding: 0 20px 20px 20px;
+  color: #4b5563;
+  line-height: 1.6;
+  animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Help Center styles */
+.help-section {
+  margin-bottom: 40px;
+}
+
+.help-section h2 {
+  color: #1a202c;
+  font-size: 24px;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #2c7a7b;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.help-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.help-card h3 {
+  margin: 0 0 8px 0;
+  color: #2c7a7b;
+  font-size: 18px;
+}
+
+.help-card p {
+  margin: 0;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* Contact page styles */
+.contact-page .contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 40px;
+  margin-top: 32px;
+}
+
+.contact-info h2,
+.contact-form-section h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: #1a202c;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 24px 0;
+}
+
+.contact-method h3 {
+  font-size: 16px;
+  margin: 0 0 8px 0;
+  color: #2c7a7b;
+}
+
+.contact-method p {
+  margin: 0;
+  color: #4b5563;
+}
+
+.quick-links {
+  margin-top: 32px;
+}
+
+.quick-links h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #1a202c;
+}
+
+.quick-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.quick-links li {
+  margin-bottom: 8px;
+}
+
+.quick-links a {
+  color: #2c7a7b;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.quick-links a:hover {
+  color: #1e5a5c;
+  text-decoration: underline;
+}
+
+/* Contact form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px 12px;
+  border: 1px solid #000;
+  border-radius: 0;
+  font-size: 14px;
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #2c7a7b;
+  box-shadow: 0 0 0 3px rgba(44, 122, 123, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-button {
+  background: #2c7a7b;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.submit-button:hover:not(:disabled) {
+  background: #235a5c;
+}
+
+.submit-button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.success-message {
+  background: #d1fae5;
+  border: 1px solid #6ee7b7;
+  color: #047857;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.error-message {
+  background: #fee;
+  border: 1px solid #fcc;
+  color: #c00;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+/* Policy pages (Privacy, Terms, Code of Conduct) */
+.policy-section {
+  margin-bottom: 32px;
+}
+
+.policy-section h2 {
+  color: #1a202c;
+  font-size: 24px;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #2c7a7b;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.policy-section h3 {
+  color: #2c7a7b;
+  font-size: 18px;
+  margin: 16px 0 8px 0;
+}
+
+.policy-section p {
+  color: #4b5563;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.policy-section ul {
+  margin: 12px 0;
+  padding-left: 24px;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+.policy-section li {
+  margin-bottom: 8px;
+}
+
+.policy-section strong {
+  color: #1a202c;
+  font-weight: 600;
+}
+
+.policy-section a {
+  color: #2c7a7b;
+  text-decoration: underline;
+}
+
+.policy-section a:hover {
+  color: #1e5a5c;
+}
+
+/* Footer section in info pages */
+.info-page-footer {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+  color: #6b7280;
+}
+
+.info-page-footer a {
+  color: #2c7a7b;
+  text-decoration: underline;
+}
+
+.info-page-footer a:hover {
+  color: #1e5a5c;
+}
+
+.conduct-footer {
+  background: #f0fdfa;
+  border: 1px solid #99f6e4;
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.conduct-footer p {
+  margin: 0;
+  color: #134e4a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .info-page-container {
+    padding: 20px 12px;
+  }
+
+  .info-page-content {
+    padding: 24px;
+  }
+
+  .info-page-content h1 {
+    font-size: 28px;
+  }
+
+  .contact-page .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .policy-section h2 {
+    font-size: 20px;
+  }
+
+  .policy-section h3 {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,45 @@
+/* Personal Journey – enhanced, engaging timeline styles */
+.journey { padding: 24px; background: #f8fafc; }
+.journey .container { max-width: 960px; margin: 0 auto; }
+.journey .title { margin: 0 0 6px; text-align: center; font-size: 28px; letter-spacing: .2px; }
+.journey .muted { color: #6b7280; }
+.journey .small { font-size: 12px; }
+.journey .error { color: #b00020; margin-top: 8px; text-align: center; }
+
+/* Form card */
+.journey-form { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 14px 0 22px; padding: 10px; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+.journey-form input { padding: 10px; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; }
+.journey-form input:focus { outline: none; border-color: #c7d2fe; box-shadow: 0 0 0 3px #eef2ff; }
+.journey-form input[type="text"] { flex: 1 1 240px; min-width: 180px; }
+.journey-form input[type="date"] { flex: 0 1 160px; min-width: 140px; }
+.journey-form button { padding: 10px 14px; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; cursor: pointer; transition: transform .06s ease, background .12s ease; }
+.journey-form button:hover { background: #f3f4f6; }
+.journey-form button:active { transform: translateY(1px); }
+
+/* Timeline */
+.timeline { position: relative; list-style: none; padding-left: 22px; margin: 0; }
+.timeline::before { content: ""; position: absolute; left: 9px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, #e5e7eb 0%, #d1d5db 100%); }
+
+.entry { position: relative; margin: 18px 0; padding-left: 26px; opacity: 0; transform: translateY(6px); animation: fadeUp .36s ease forwards; }
+.entry:nth-child(1) { animation-delay: .02s; }
+.entry:nth-child(2) { animation-delay: .06s; }
+.entry:nth-child(3) { animation-delay: .1s; }
+.entry:nth-child(4) { animation-delay: .14s; }
+
+.dot { position: absolute; left: 2px; top: 10px; width: 14px; height: 14px; border-radius: 50%; background: #4f46e5; box-shadow: 0 0 0 3px #eef2ff, 0 4px 10px rgba(79,70,229,.25); }
+.content { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease; }
+.entry:hover .content { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.08); border-color: #dbeafe; }
+
+.row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.entry-title { margin: 0; font-size: 17px; font-weight: 600; color: #111827; }
+.entry-date { color: #3730a3; background: #eef2ff; border: 1px solid #dbeafe; padding: 4px 8px; border-radius: 999px; font-size: 12px; white-space: nowrap; }
+.desc { margin-top: 8px; color: #374151; line-height: 1.45; }
+.actions { margin-top: 10px; }
+.btn.danger { border-color: #ef4444; color: #ef4444; background: #fff; border-radius: 8px; padding: 8px 12px; cursor: pointer; transition: background .12s ease, transform .06s ease; }
+.btn.danger:hover { background: #fef2f2; }
+.btn.danger:active { transform: translateY(1px); }
+
+@keyframes fadeUp {
+	from { opacity: 0; transform: translateY(6px); }
+	to { opacity: 1; transform: translateY(0); }
+}

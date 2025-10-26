@@ -1,0 +1,97 @@
+/* This file now relies on variables from styles/deakin.css */
+.payment-page { background: transparent; }
+
+.payment-container {
+  max-width: 720px;
+  margin: 32px auto;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.payment-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 24px;
+  align-items: start;
+}
+
+.plan-summary {
+  padding: 16px;
+  border-right: 1px solid #efefef;
+}
+
+.plan-summary h2 { margin-top: 0; }
+.plan-summary .price { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+
+.payment-column { padding: 8px 0; }
+
+.payment-container h1 {
+  margin: 0 0 8px 0;
+  font-size: 28px;
+}
+
+.payment-container .description {
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.payment-card { max-width: 640px; margin: 0 auto; }
+
+.card-element {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f8f9fa;
+}
+
+.StripeElement {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+}
+
+.StripeElement--focus {
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.08);
+}
+
+.card-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  margin-bottom: 12px;
+}
+
+.card-field { flex: 1 1 0; }
+.card-field.small { flex: 0 0 120px; }
+
+.card-label { display: block; margin-bottom: 6px; color: #333; font-size: 14px; }
+
+.card-input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #fbfcff;
+}
+
+.error { color: #b00020; margin-top: 8px; }
+.success { color: #0a8a00; margin-top: 8px; }
+
+@media (max-width: 640px) {
+  .payment-container { margin: 12px; padding: 16px; }
+  .payment-grid { grid-template-columns: 1fr; }
+  .plan-summary { border-right: none; border-bottom: 1px solid #efefef; padding-bottom: 12px; }
+  .pricing-grid { grid-template-columns: 1fr; }
+}

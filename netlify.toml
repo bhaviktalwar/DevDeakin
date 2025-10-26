@@ -1,0 +1,18 @@
+# Netlify configuration for SPA routing and serverless functions
+
+[build]
+  command = "npm run build"
+  publish = "build"
+  functions = "functions"
+
+# Redirect API calls to Netlify Functions
+[[redirects]]
+  from = "/api/ai/chat"
+  to = "/.netlify/functions/ai-chat"
+  status = 200
+
+# SPA fallback - must be last
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
